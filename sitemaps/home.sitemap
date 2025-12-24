@@ -1,0 +1,52 @@
+sitemap home label="Home"
+{
+  Frame label="Home Overview" {
+    Group item=Ground
+    Group item=Basement
+    Group item=House{
+    Frame label="Master Command" {
+      Switch item=G_Bed1_L mappings=[ON="All ON", OFF="All OFF"]
+      Switch item=G_Bed1_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+    }
+    Frame label="Bedroom 1 Lights" {
+      Slider item=Light_GL1
+      Switch item=Light_GL9
+      Switch item=Light_GL10
+      Switch item=Light_GL17
+      Switch item=Light_GL39
+      Switch item=Light_GL35
+      Switch item=Light_GL29
+      Switch item=Light_GL31
+      Switch item=Light_GL32
+      Switch item=Light_GL33
+      
+    }
+    Frame label="Bedroom 1 Blinds" {
+      Default item=Blind_GM1
+      Default item=Blind_GM2
+      Default item=Blind_GM3
+      Default item=Blind_GM4
+      Default item=Blind_GM5
+      Default item=Blind_GM6
+    }
+
+    Frame label="Bedroom 1 Heatinhg" {
+      Switch item=UF1On 
+      Text item=UF1Temp
+      Setpoint item=UF1Set
+      Switch item=UF1hc
+      Switch item=UF2On 
+      Text item=UF2Temp
+      Setpoint item=UF2Set
+      Switch item=UF2hc
+    }
+    Frame label="Bedroom 1 AC" {
+      Switch item=AC1On
+      Switch item=AC1Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"] 
+      Text item=AC1Temp
+      Setpoint item=AC1Set
+      Switch item=AC1Fan mappings=[0="Auto",20="Low",60="Medium",100="High"]
+    }
+  }
+  }
+}

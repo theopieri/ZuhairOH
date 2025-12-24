@@ -1,0 +1,106 @@
+/*
+Create All Group HERE!!!!!!!!!!!!!!!
+["Measurement", "Temperature"]
+https://community.openhab.org/t/oh3-semantic-model-setup-via-tags-in-configuration-items-files/112520
+
+https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv
+*/
+//Group All "All" ["Basement"]
+Group Spare "All Spare" //["BoilerRoom"]
+Group Unknow "Unknow" //["BoilerRoom"]
+Group	Utility   "Utility" 	    <qualityofservice>	  ["BoilerRoom"]
+//HOUSE MODEL
+//INDOOR
+
+Group:Switch:OR(ON, OFF) gIndoor "Indoor" ["Indoor"]
+Group gGroundFloorAll "Ground Floor" ["Outdoor"]
+    Group:Switch:OR(ON, OFF) 	GroundFloor 	"Ground Floor All" 	    <terrace>		(gOutdoorAll) ["Outdoor"]
+
+/*Ground Floor Levels*/
+Group:Switch:OR(ON, OFF) 	gfLights 	"Ground Lights"
+Group:Rollershutter:AVG 	gfBlinds 	"Ground Blinds Open/Close" <blinds>
+Group:Rollershutter:AVG 	gfCurtains 	"Ground Curtains Open/Close" <window>
+Group:Rollershutter:AVG 	ffCurtains 	"First Curtains Open/Close" <window>
+Group:Rollershutter:AVG 	gfbossCurtains 	"Boss Curtains Open/Close" <window>
+
+Group 	gfAll 	    "Ground Floor" 	    <groundfloor>	(gIndoor)	["GroundFloor"]
+
+    Group:Switch:OR(ON, OFF) 	gfCommon 	"Common Area" <corridor> (gfAll)	 ["Room"]
+        Group:Switch:OR(ON, OFF) 	gfCommonL 	"Common Area [(%d)]" <light> (gfCommon,gfLights)	     ["Lightbulb"]
+        Group:Rollershutter:AVG gfCommonB "Blinds" 	    <blinds> (gfCommon,gfCurtains)["Blinds"]
+        //Group	gfCommonAC   "GF Common AC's" 	        <climate>	(gfCommon)  ["HVAC"]
+    
+    Group 	gfKitchen1 "Kitchen" 	    <kitchen> (gfAll)["Kitchen"]
+        Group:Switch:OR(ON, OFF) 	gfKitchen1L "Kitchen [(%d)]" 	    <light> (gfKitchen1,gfLights)["Lightbulb"]
+        Group:Rollershutter:AVG gfKitchen1B "Kitchen Blinds" 	    <blinds> (gfKitchen1,gfCurtains)["Blinds"]
+        //Group	gfKitchen1AC   "Kitchen AC's" 	        <climate>	(gfKitchen1)  ["HVAC"]
+
+    Group 	gfLiving "Living" 	    <sofa> (gfAll)["LivingRoom"]
+        Group:Switch:OR(ON, OFF) 	gfLivingL "Living [(%d)]" 	    <light> (gfLiving,gfLights)["Lightbulb"]
+        Group:Rollershutter:AVG gfLivingB "Living Blinds" 	    <blinds> (gfLiving,gfCurtains)["Blinds"]
+        //Group	gfLivingAC   "Living AC's" 	        <climate>	(gfLiving)  ["HVAC"]
+        
+    Group 	gfDing "Dining" 	    <party> (gfAll)["DiningRoom"]
+        Group:Switch:OR(ON, OFF) 	gfDingL "Dining [(%d)]" 	    <light> (gfDing,gfLights)["Lightbulb"]
+        Group:Rollershutter:AVG gfDingB "Dining Blinds" 	    <blinds> (gfDing,gfCurtains)["Blinds"]
+        //Group	gfDingAC   "Dining AC's" 	        <climate>	(gfDing)  ["HVAC"]
+
+    Group	gfsitting 	"Sitting Area" 	    <sofa>(gfAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	gfsittingL 	"Sitting Area [(%d)]" 	    <light>(gfsitting,gfLights)	 ["Lightbulb"]
+        Group:Rollershutter:AVG gfsittingB "Sitting Area Blinds" 	    <blinds> (gfsitting,gfCurtains)["Blinds"]
+        //Group	gfsittingAC   "Sitting Area AC's" 	        <climate>	(gfsitting)  ["HVAC"]
+
+    Group	gfoff1 	"Office" 	    <office> (gfAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	gfoff1L 	"Office [(%d)]" 	    <light>(gfoff1,gfLights)	 ["Lightbulb"]
+        Group:Rollershutter:AVG gfoff1B "Office Blinds" 	    <blinds> (gfoff1,gfCurtains)["Blinds"]
+        //Group	gfoff1AC   "Office AC's" 	        <climate>	(gfoff1)  ["HVAC"]
+    /*Group	gflaundry 	"Laundry" 	    <dryer>(ffAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	gflaundryL 	"Laundry [(%d)]" 	    <light>(gflaundry,gfLights)	 ["Lightbulb"]
+        Group:Rollershutter:AVG gflaundryB "Laundry Blinds" 	    <blinds> (gflaundry)["Blinds"]
+        Group	gflaundryAC   "Laundry AC's" 	        <climate>	(gflaundry)  ["HVAC"]*/
+
+/*Guest House*/
+Group 	ghAll 	    "Guest House" 	    <groundfloor>	(gIndoor)	["GroundFloor"]
+Group:Switch:OR(ON, OFF) 	ghLights 	"Guest House Lights  [(%d)]"
+
+    Group 	ghKitchen1 "Kitchen" 	    <kitchen> (ghAll)["Kitchen"]
+        Group:Switch:OR(ON, OFF) 	ghKitchen1L "Kitchen[(%d)]" 	    <light> (ghKitchen1,ghLights)["Lightbulb"]
+        //Group:Rollershutter:AVG ghKitchen1B "Kitchen Blinds" 	    <blinds> (ghKitchen1)["Blinds"]
+        //Group	ghKitchen1AC   "Kitchen AC's" 	        <climate>	(ghKitchen1)  ["HVAC"]
+    Group	ghBed1 	"Bed" 	    <bedroom_orange>(ghAll)	 ["Bedroom"]
+            Group:Switch:OR(ON, OFF) 	ghBed1L 	"Bed[(%d)]" 	    <light>(ghBed1,ghLights)	 ["Lightbulb"]
+            //Group:Switch:OR(ON, OFF) 	ghBed1 BathL 	"Bathroom 1 Light[(%d)]" 	    <light>(ghBed1 )	 ["Lightbulb"]
+            //Group:Rollershutter:AVG ghBed1B "Bed Blinds" 	    <blinds> (ghBed1 )["Blinds"]
+            //Group	ghBed1AC   "Bed AC's" 	        <climate>	(ghBed1 )  ["HVAC"]
+
+/*First Floor*/
+Group 	ffAll 	    "First Floor" 	    <firstfloor>	(gIndoor)	["GroundFloor"]
+Group:Switch:OR(ON, OFF) 	ffLights 	"FF Lights  [(%d)]"
+    Group 	ffCommon 	"FF Common Area" <corridor> (ffAll)	 ["Room"]
+        
+        Group:Switch:OR(ON, OFF) 	ffCommonL 	"FF Common Area  [(%d)]" <light> (ffCommon,ffLights)	     ["Lightbulb"]
+        //Group:Rollershutter:AVG ffCommonB "FF Common Blinds" 	    <blinds> (ffCommon)["Blinds"]
+        //Group	ffCommonAC   "FF Common AC's" 	        <climate>	(ffCommon)  ["HVAC"]
+
+    Group	ffBed1 	"Master Bed" 	    <bedroom_orange>(ffAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	ffBed1L 	"Master Bed[(%d)]" 	    <light>(ffBed1,ffLights)	 ["Lightbulb"]
+        //Group:Switch:OR(ON, OFF) 	ffBed1BathL 	"Bathroom 1 Light[(%d)]" 	    <light>(ffBed1)	 ["Lightbulb"]
+        Group:Rollershutter:AVG ffBed1B "Master Bed Blinds" 	    <blinds> (ffBed1,ffCurtains)["Blinds"]
+        //Group	ffBed1AC   "Master Bed AC's" 	        <climate>	(ffBed1)  ["HVAC"]
+
+    Group 	ffBed2 	"Bedroom Center" 	    <bedroom_red>(ffAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	ffBed2L 	"Bedroom Center [(%d)]" 	    <light>(ffBed2,ffLights)	 ["Lightbulb"]
+        Group:Rollershutter:AVG ffBed2B "Bedroom Center Blinds" 	    <blinds> (ffBed2,ffCurtains)["Blinds"]
+        //Group	ffBed2AC   "Bedroom Center AC's" 	        <climate>	(ffBed2)  ["HVAC"]
+
+    Group	ffBed3 	"Bedroom 3" 	    <bedroom>(ffAll)	 ["Bedroom"]
+        Group:Switch:OR(ON, OFF) 	ffBed3L 	"Bedroom 3 [(%d)]" 	    <light>(ffBed3,ffLights)	 ["Lightbulb"]
+        Group:Rollershutter:AVG ffBed3B "Bedroom 3 Blinds" 	    <blinds> (ffBed3,ffCurtains)["Blinds"]
+        //Group	ffBed3AC   "Bedroom 3 AC's" 	        <climate>	(ffBed3)  ["HVAC"]
+/*OutDoor Levels*/
+Group gOutdoorAll "Outdoor" ["Outdoor"]
+    Group:Switch:OR(ON, OFF) 	Outdoor 	"Outdoor All" 	    <terrace>		(gOutdoorAll) ["Outdoor"]
+        Group:Switch:OR(ON, OFF) 	GroundOutdoorL 	"Outdoor New Pool [(%d)]" 	    <vacation>		(Outdoor) ["Lightbulb"]
+        Group:Switch:OR(ON, OFF) 	GeustHouseOutdoorL 	"Outdoor Guest House [(%d)]" 	    <party>		(Outdoor) ["Lightbulb"]
+        Group:Switch:OR(ON, OFF) 	MainHouseOutdoorL 	"Outdoor Main House [(%d)]" 	    <terrace>		(Outdoor) ["Lightbulb"]
+        Group GroundOutdoorS 	"Outdoor Ground Floor Sensors" 	    <terrace>		(Outdoor) ["Sensor"]

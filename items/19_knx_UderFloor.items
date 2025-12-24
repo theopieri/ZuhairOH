@@ -1,0 +1,71 @@
+Switch UF1On     "UF ON/OFF"     (G_Bed1_UF)    ["Control"]  { channel="knx:device:home:underfloor1:powerONOFF",widgetOrder="1"}
+Number UF1Temp   "UF Temperature [%.1f °C]"    <temperature> (G_Bed1_UF)  ["Temperature"]     { channel="knx:device:home:underfloor1:tem",widgetOrder="2"}
+Number UF1Set    "UF Set Point [%.1f °C]" <temperature> (G_Bed1_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor1:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF1hc     "Status Heat Control"     (G_Bed1_UF)    ["Control"]  { channel="knx:device:home:underfloor1:heatControl",widgetOrder="4"}
+//Switch UF1vp     "Valve Position"     (G_Bed1_UF)                  { channel="knx:device:home:underfloor1:valvePosition",widgetOrder="5"}
+
+Switch UF2On     "UF Bath ON/OFF"     (G_Bed1_UF)    ["Control"]  { channel="knx:device:home:underfloor2:powerONOFF",widgetOrder="1"}
+Number UF2Temp   "UF Bath Temperature [%.1f °C]"    <temperature> (G_Bed1_UF)  ["Temperature"]     { channel="knx:device:home:underfloor2:tem",widgetOrder="2"}
+Number UF2Set    "UF Bath Set Point [%.1f °C]" <temperature> (G_Bed1_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor2:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF2hc     "Status Bath Heat Control"     (G_Bed1_UF)    ["Control"]  { channel="knx:device:home:underfloor2:heatControl",widgetOrder="4"}
+//Switch UF2vp     "Valve Position"     (G_Bed1_UF)                  { channel="knx:device:home:underfloor2:valvePosition",widgetOrder="5"}
+
+Switch UF3On     "UF ON/OFF"     (G_Bed2_UF)    ["Control"]  { channel="knx:device:home:underfloor3:powerONOFF",widgetOrder="1"}
+Number UF3Temp   "UF Temperature [%.1f °C]"    <temperature> (G_Bed2_UF)  ["Temperature"]     { channel="knx:device:home:underfloor3:tem",widgetOrder="2"}
+Number UF3Set    "UF Set Point [%.1f °C]" <temperature> (G_Bed2_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor3:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF3hc     "Status Heat Control"     (G_Bed2_UF)    ["Control"]  { channel="knx:device:home:underfloor3:heatControl",widgetOrder="4"}
+//Switch UF3vp     "Valve Position"     (G_Bed2_UF)                  { channel="knx:device:underfloor3:valvePosition",widgetOrder="5"}
+
+Switch UF4On     "UF ON/OFF"     (G_Bed3_UF)    ["Control"]  { channel="knx:device:home:underfloor4:powerONOFF",widgetOrder="1"}
+Number UF4Temp   "UF Temperature [%.1f °C]"    <temperature> (G_Bed3_UF)  ["Temperature"]     { channel="knx:device:home:underfloor4:tem",widgetOrder="2"}
+Number UF4Set    "UF Set Point [%.1f °C]" <temperature> (G_Bed3_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor4:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF4hc     "Status Heat Control"     (G_Bed3_UF)    ["Control"]  { channel="knx:device:home:underfloor4:heatControl",widgetOrder="4"}
+//Switch UF4vp     "Valve Position"     (G_Bed3_UF)                  { channel="knx:device:home:underfloor4:valvePosition",widgetOrder="5"}
+
+Switch UF5On     "UF ON/OFF"     (G_Bed4_UF)    ["Control"]  { channel="knx:device:home:underfloor5:powerONOFF",widgetOrder="1"}
+Number UF5Temp   "UF Temperature [%.1f °C]"    <temperature> (G_Bed4_UF)  ["Temperature"]     { channel="knx:device:home:underfloor5:tem",widgetOrder="2"}
+Number UF5Set    "UF Set Point [%.1f °C]" <temperature> (G_Bed4_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor5:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF5hc     "Status Heat Control"     (G_Bed4_UF)    ["Control"]  { channel="knx:device:home:underfloor5:heatControl",widgetOrder="4"}
+//Switch UF5vp     "Valve Position"     (G_Bed4_UF)                  { channel="knx:device:home:underfloor5:valvePosition",widgetOrder="5"}
+
+Switch UF6On     "UF ON/OFF"     (G_MainBath_UF)    ["Control"]  { channel="knx:device:home:underfloor6:powerONOFF",widgetOrder="1"}
+Number UF6Temp   "UF Temperature [%.1f °C]"    <temperature> (G_MainBath_UF)  ["Temperature"]     { channel="knx:device:home:underfloor6:tem",widgetOrder="2"}
+Number UF6Set    "UF Set Point [%.1f °C]" <temperature> (G_MainBath_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor6:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF6hc     "Status Heat Control"     (G_MainBath_UF)    ["Control"]  { channel="knx:device:home:underfloor6:heatControl",widgetOrder="4"}
+//Switch UF6vp     "Valve Position"     (G_MainBath_UF)                  { channel="knx:device:home:underfloor6:valvePosition",widgetOrder="5"}
+
+Switch UF7On     "UF ON/OFF"     (B_Living_UF)    ["Control"]  { channel="knx:device:home:underfloor7:powerONOFF",widgetOrder="1"}
+Number UF7Temp   "UF Temperature [%.1f °C]"    <temperature> (B_Living_UF)  ["Temperature"]     { channel="knx:device:home:underfloor7:tem",widgetOrder="2"}
+Number UF7Set    "UF Set Point [%.1f °C]" <temperature> (B_Living_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor7:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF7hc     "Status Heat Control"     (B_Living_UF)    ["Control"]  { channel="knx:device:home:underfloor7:heatControl",widgetOrder="4"}
+//Switch UF7vp     "Valve Position"     (B_Living_UF)                  { channel="knx:device:home:underfloor7:valvePosition",widgetOrder="5"}
+
+Switch UF8On     "UF ON/OFF"     (B_Dining_UF)    ["Control"]  { channel="knx:device:home:underfloor8:powerONOFF",widgetOrder="1"}
+Number UF8Temp   "UF Temperature [%.1f °C]"    <temperature> (B_Dining_UF)  ["Temperature"]     { channel="knx:device:home:underfloor8:tem",widgetOrder="2"}
+Number UF8Set    "UF Set Point [%.1f °C]" <temperature> (B_Dining_UF) ["Setpoint","Temperature"] { channel="knx:device:home:underfloor8:set"
+,widgetOrder="3",
+listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1"]
+}
+Switch UF8hc     "Status Heat Control"     (B_Dining_UF)    ["Control"]  { channel="knx:device:home:underfloor8:heatControl",widgetOrder="4"}
+//Switch UF8vp     "Valve Position"     (B_Dining_UF)                  { channel="knx:device:home:underfloor8:valvePosition",widgetOrder="5"}
