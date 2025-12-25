@@ -2,63 +2,75 @@ Group House "House" [ "Location" ]
 Group Ground "Ground Floor" (House) [ "GroundFloor" ]
 Group Basement "Basement" (House) [ "Basement" ]
 
+Switch seasonalMode "summer/winter" <season> 
+Switch debugMode "Debug Mode" <settings> //Hidden statrus 
 // Ground sublocations
-Group G_Bed1 "Bedroom 1" (Ground) [ "Room" ]
-    Group:Switch:OR(ON, OFF) G_Bed1_L "Light" <light> (G_Bed1) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_Bed1_B "Blinds" <blinds> (G_Bed1) ["Blinds"]  {widgetOrder="2"}
-    Group G_Bed1_AC "AC" <snow> (G_Bed1) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_Bed1_UF "Under Floor" <radiator> (G_Bed1) [ "HVAC" ]  {widgetOrder="4"}
-
-Group G_Bed2 "Bedroom 2" (Ground) [ "Room" ]
-    Group:Switch:OR(ON, OFF) G_Bed2_L "Light" <light> (G_Bed2) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_Bed2_B "Blinds" <blinds> (G_Bed2) ["Blinds"]  {widgetOrder="2"}
-    Group G_Bed2_AC "AC" <snow> (G_Bed2) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_Bed2_UF "Under Floor" <radiator> (G_Bed2) [ "HVAC" ]  {widgetOrder="4"}
-Group G_Bed3 "Bedroom 3" (Ground) [ "Room" ]
-    Group:Switch:OR(ON, OFF) G_Bed3_L "Light" <light> (G_Bed3) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_Bed3_B "Blinds" <blinds> (G_Bed3) ["Blinds"]  {widgetOrder="2"}
-    Group G_Bed3_AC "AC" <snow> (G_Bed3) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_Bed3_UF "Under Floor" <radiator> (G_Bed3) [ "HVAC" ]  {widgetOrder="4"}
-Group G_Bed4 "Bedroom 4" (Ground) [ "Room" ]
-    Group:Switch:OR(ON, OFF) G_Bed4_L "Light" <light> (G_Bed4) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_Bed4_B "Blinds" <blinds> (G_Bed4) ["Blinds"]  {widgetOrder="2"}
-    Group G_Bed4_AC "AC" <snow> (G_Bed4) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_Bed4_UF "Under Floor" <radiator> (G_Bed4) [ "HVAC" ]  {widgetOrder="4"}
-Group G_Corridor "Corridor" (Ground) [ "Corridor" ]
-    Group:Switch:OR(ON, OFF) G_Corridor_L "Light" <light> (G_Corridor) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_Corridor_B "Blinds" <blinds> (G_Corridor) ["Blinds"]  {widgetOrder="2"}
-    Group G_Corridor_AC "AC" <snow> (G_Corridor) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_Corridor_UF "Under Floor" <radiator> (G_Corridor) [ "HVAC" ]  {widgetOrder="4"}
-Group G_MainBath "Main Bath" (Ground) [ "Bathroom" ]
-    Group:Switch:OR(ON, OFF) G_MainBath_L "Light" <light> (G_MainBath) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG G_MainBath_B "Blinds" <blinds> (G_MainBath) ["Blinds"]  {widgetOrder="2"}
-    Group G_MainBath_AC "AC" <snow> (G_MainBath) [ "HVAC" ]  {widgetOrder="3"}
-    Group G_MainBath_UF "Under Floor" <radiator> (G_MainBath) [ "HVAC" ]  {widgetOrder="4"}
+Group G_Bed1 "Bedroom 1" <bedroom_blue> (Ground) [ "Room" ]
+    Group:Switch:OR(ON, OFF) G_Bed1_L "Lights" <light> (G_Bed1) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG G_Bed1_B "Blinds" <blinds> (G_Bed1) ["WindowCovering"]  {widgetOrder="2"}
+    Group G_Bed1_TEMP "Temperature Sensors" (G_Bed1) [ "HVAC" ]  {widgetOrder="3"}
+    Group G_Bed1_AC "AC" <snow> (G_Bed1) [ "HVAC" ]  {widgetOrder="4"}
+    Group G_Bed1_UF "Under Floor" <radiator> (G_Bed1) [ "HVAC" ]  {widgetOrder="5"}
+Group G_Bed2 "Bedroom 2" <bedroom_orange> (Ground) [ "Room" ]
+    Group:Switch:OR(ON, OFF) G_Bed2_L "Lights" <light> (G_Bed2) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG G_Bed2_B "Blinds" <blinds> (G_Bed2) ["WindowCovering"]  {widgetOrder="2"}
+    Group G_Bed2_TEMP "Temperature Sensors" (G_Bed2) [ "HVAC" ]  {widgetOrder="3"}
+    Group G_Bed2_AC "AC" <snow> (G_Bed2) [ "HVAC" ]  {widgetOrder="4"}
+    Group G_Bed2_UF "Under Floor" <radiator> (G_Bed2) [ "HVAC" ]  {widgetOrder="5"}
+Group G_Bed3 "Bedroom 3" <bedroom_red> (Ground) [ "Room" ]
+    Group:Switch:OR(ON, OFF) G_Bed3_L "Lights" <light> (G_Bed3) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG G_Bed3_B "Blinds" <blinds> (G_Bed3) ["WindowCovering"]  {widgetOrder="2"}
+    Group G_Bed3_TEMP "Temperature Sensors" (G_Bed3) [ "HVAC" ]  {widgetOrder="3"}
+    Group G_Bed3_AC "AC" <snow> (G_Bed3) [ "HVAC" ]  {widgetOrder="4"}
+    Group G_Bed3_UF "Under Floor" <radiator> (G_Bed3) [ "HVAC" ]  {widgetOrder="5"}
+Group G_Bed4 "Bedroom 4" <bedroom_blue> (Ground) [ "Room" ]
+    Group:Switch:OR(ON, OFF) G_Bed4_L "Lights" <light> (G_Bed4) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG G_Bed4_B "Blinds" <blinds> (G_Bed4) ["WindowCovering"]  {widgetOrder="2"}
+    Group G_Bed4_TEMP "Temperature Sensors" (G_Bed4) [ "HVAC" ]  {widgetOrder="3"}
+    Group G_Bed4_AC "AC" <snow> (G_Bed4) [ "HVAC" ]  {widgetOrder="4"}
+    Group G_Bed4_UF "Under Floor" <radiator> (G_Bed4) [ "HVAC" ]  {widgetOrder="5"}
+Group G_Corridor "Corridor" <corridor> (Ground) [ "Corridor" ]
+    Group:Switch:OR(ON, OFF) G_Corridor_L "Lights" <light> (G_Corridor) ['SpotLight'] {widgetOrder="1"}
+    //Group:Rollershutter:AVG G_Corridor_B "Blinds" <blinds> (G_Corridor) ["WindowCovering"]  {widgetOrder="2"}
+    //Group G_Corridor_TEMP "Temperature Sensors" (G_Corridor) [ "HVAC" ]  {widgetOrder="3"}
+    //Group G_Corridor_AC "AC" <snow> (G_Corridor) [ "HVAC" ]  {widgetOrder="4"}
+    //Group G_Corridor_UF "Under Floor" <radiator> (G_Corridor) [ "HVAC" ]  {widgetOrder="5"}
+Group G_MainBath "Main Bath" <bath> (Ground) [ "Bathroom" ]
+    Group:Switch:OR(ON, OFF) G_MainBath_L "Lights" <light> (G_MainBath) ['SpotLight'] {widgetOrder="1"}
+    //Group:Rollershutter:AVG G_MainBath_B "Blinds" <blinds> (G_MainBath) ["WindowCovering"]  {widgetOrder="2"}
+    Group G_MainBath_TEMP "Temperature Sensors" (G_MainBath) [ "HVAC" ]  {widgetOrder="3"}
+    //Group G_MainBath_AC "AC" <snow> (G_MainBath) [ "HVAC" ]  {widgetOrder="4"}
+    Group G_MainBath_UF "Under Floor" <radiator> (G_MainBath) [ "HVAC" ]  {widgetOrder="5"}
+    Group G_MainBath_Utility "Utility Room" <water> (G_MainBath) [ "Downlight" ]  {widgetOrder="6"}
 
 //Basement sublocations
-Group B_Kitchen "Kitchen" (Basement) [ "Kitchen" ]
-    Group:Switch:OR(ON, OFF) B_Kitchen_L "Light" <light> (B_Kitchen) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG B_Kitchen_B "Blinds" <blinds> (B_Kitchen) ["Blinds"]  {widgetOrder="2"}
-    Group B_Kitchen_AC "AC" <snow> (B_Kitchen) [ "HVAC" ]  {widgetOrder="3"}
-    Group B_Kitchen_UF "Under Floor" <radiator> (B_Kitchen) [ "HVAC" ]  {widgetOrder="4"}
-Group B_Dining "Dining" (Basement) [ "Room" ]
-    Group:Switch:OR(ON, OFF) B_Dining_L "Light" <light> (B_Dining) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG B_Dining_B "Blinds" <blinds> (B_Dining) ["Blinds"]  {widgetOrder="2"}
-    Group B_Dining_AC "AC" <snow> (B_Dining) [ "HVAC" ]  {widgetOrder="3"}
-    Group B_Dining_UF "Under Floor" <radiator> (B_Dining) [ "HVAC" ]  {widgetOrder="4"}
-Group B_Living "Living" (Basement) [ "LivingRoom" ]
-    Group:Switch:OR(ON, OFF) B_Living_L "Light" <light> (B_Living) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG B_Living_B "Blinds" <blinds> (B_Living) ["Blinds"]  {widgetOrder="2"}
-    Group B_Living_AC "AC" <snow> (B_Living) [ "HVAC" ]  {widgetOrder="3"}
-    Group B_Living_UF "Under Floor" <radiator> (B_Living) [ "HVAC" ]  {widgetOrder="4"}
-Group B_Veranda "Veranda" (Basement) [ "Terrace" ]
-    Group:Switch:OR(ON, OFF) B_Veranda_L "Light" <light> (B_Veranda) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG B_Veranda_B "Blinds" <blinds> (B_Veranda) ["Blinds"]  {widgetOrder="2"}
-    Group B_Veranda_AC "AC" <snow> (B_Veranda) [ "HVAC" ]  {widgetOrder="3"}
-    Group B_Veranda_UF "Under Floor" <radiator> (B_Veranda) [ "HVAC" ]  {widgetOrder="4"}
-Group B_Bath "Bath" (Basement) [ "Bathroom" ]
-    Group:Switch:OR(ON, OFF) B_Bath_L "Light" <light> (B_Bath) ['SpotLight'] {widgetOrder="1"}
-    Group:Rollershutter:AVG B_Bath_B "Blinds" <blinds> (B_Bath) ["Blinds"]  {widgetOrder="2"}
-    Group B_Bath_AC "AC" <snow> (B_Bath) [ "HVAC" ]  {widgetOrder="3"}
-    Group B_Bath_UF "Under Floor" <radiator> (B_Bath) [ "HVAC" ]  {widgetOrder="4"}
+/*Group B_Kitchen "Kitchen" <kitchen> (Basement) [ "Kitchen" ]
+    Group:Switch:OR(ON, OFF) B_Kitchen_L "Lights" <light> (B_Kitchen) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG B_Kitchen_B "Blinds" <blinds> (B_Kitchen) ["WindowCovering"]  {widgetOrder="2"}
+    Group B_Kitchen_TEMP "Temperature Sensors" (B_Kitchen) [ "HVAC" ]  {widgetOrder="3"}
+    Group B_Kitchen_AC "AC" <snow> (B_Kitchen) [ "HVAC" ]  {widgetOrder="4"}
+    Group B_Kitchen_UF "Under Floor" <radiator> (B_Kitchen) [ "HVAC" ]  {widgetOrder="5"}
+*/
+Group B_Dining "Kitchen - Dining" <kitchen> (Basement) [ "Room" ]
+    Group:Switch:OR(ON, OFF) B_Dining_L "Lights" <light> (B_Dining) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG B_Dining_B "Blinds" <blinds> (B_Dining) ["WindowCovering"]  {widgetOrder="2"}
+    Group B_Dining_TEMP "Temperature Sensors" (B_Dining) [ "HVAC" ]  {widgetOrder="3"}
+    Group B_Dining_AC "AC" <snow> (B_Dining) [ "HVAC" ]  {widgetOrder="4"}
+    Group B_Dining_UF "Under Floor" <radiator> (B_Dining) [ "HVAC" ]  {widgetOrder="5"}
+Group B_Living "Living" <sofa> (Basement) [ "LivingRoom" ]
+    Group:Switch:OR(ON, OFF) B_Living_L "Lights" <light> (B_Living) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG B_Living_B "Blinds" <blinds> (B_Living) ["WindowCovering"]  {widgetOrder="2"}
+    Group B_Living_TEMP "Temperature Sensors" (B_Living) [ "HVAC" ]  {widgetOrder="3"}
+    Group B_Living_AC "AC" <snow> (B_Living) [ "HVAC" ]  {widgetOrder="4"}
+    Group B_Living_UF "Under Floor" <radiator> (B_Living) [ "HVAC" ]  {widgetOrder="5"}
 
+Group B_Bath "W.C" <toilet>(Basement) [ "Bathroom" ]
+    Group:Switch:OR(ON, OFF) B_Bath_L "Lights" <light> (B_Bath) ['SpotLight'] {widgetOrder="1"}
+    Group:Rollershutter:AVG B_Bath_B "Blinds" <blinds> (B_Bath) ["WindowCovering"]  {widgetOrder="2"}
+    //Group B_Bath_AC "AC" <snow> (B_Bath) [ "HVAC" ]  {widgetOrder="3"}
+    //Group B_Bath_UF "Under Floor" <radiator> (B_Bath) [ "HVAC" ]  {widgetOrder="4"}
+
+Group:Switch:OR(ON, OFF) Outdoor "Outdoor" <garden> (House)  [ "Terrace" ]
+    Group:Switch:OR(ON, OFF) Outdoor_L "Front Door Lights" <light> (Outdoor) ['SpotLight'] {widgetOrder="1"}
+    Group:Switch:OR(ON, OFF) B_Veranda_L "Veranda Lights" <light> (Outdoor) ['SpotLight'] {widgetOrder="2"}
+    Group:Switch:OR(ON, OFF) B_Kitchen_L "Kitchen Lights" <light> (Outdoor) ['SpotLight'] {widgetOrder="2"}

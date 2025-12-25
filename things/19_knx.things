@@ -15,7 +15,7 @@ Bridge knx:ip:home [
         //address="1.2.2",
         fetch=true
         //pingInterval=300,
-        ,readInterval=80
+        ,readInterval=300
     ] {
     Type dimmer : GL1 "Bed 1 Spot" [ switch="1/0/1+<1/3/1", increaseDecrease="1/1/1", position="1/2/1+<1/4/1" ]
     Type dimmer : GL2 "Bed 2 Spot" [ switch="1/0/2+<1/3/2", increaseDecrease="1/1/2", position="1/2/2+<1/4/2" ]
@@ -56,13 +56,15 @@ Bridge knx:ip:home [
     Type switch : GL37 "Led Wardrobe Bed3" [ ga="1/0/37+<1/3/37" ]
     Type switch : GL38 "Led Wardrobe Bed4" [ ga="1/0/38+<1/3/38" ]
     Type switch : GL39 "Led Profile Bed1" [ ga="1/0/39+<1/3/39" ]
+    Type switch : hotwater "Hot Water Timer" [ ga="0/5/2+<0/5/1" ]
+    Type switch : recwater "Rec Water Timer" [ ga="0/5/5+<0/5/4" ]
     //Type switch : GL40 "SPARE" [ ga="1/0/40+<1/3/40" ]
   }
   Thing device blinds "KNX GF Shutters" [ 
         //address="1.2.2",
         fetch=true
         //pingInterval=300,
-        ,readInterval=90
+        ,readInterval=300
     ] {
     Type rollershutter : GM1 "BED1 WEST" [ upDown="2/0/1", stopMove="2/1/1", position="2/2/1", positionFeedback="2/4/1", angle="2/3/1", angleFeedback="2/5/1" ]
     Type rollershutter : GM2 "BED1 WEST" [ upDown="2/0/2", stopMove="2/1/2", position="2/2/2", positionFeedback="2/4/2", angle="2/3/2", angleFeedback="2/5/2" ]
@@ -91,7 +93,7 @@ Bridge knx:ip:home [
     //address="1.2.2",
         fetch=true
         //pingInterval=300,
-      ,readInterval=100
+      ,readInterval=300
     ] {
     Type dimmer : BL1 "Kitchen Spot" [ switch="3/0/1+<3/3/1", increaseDecrease="3/1/1", position="3/2/1+<3/4/1"]
     Type dimmer : BL2 "Dining Spot" [ switch="3/0/2+<3/3/2", increaseDecrease="3/1/2", position="3/2/2+<3/4/2"]
@@ -138,7 +140,7 @@ Bridge knx:ip:home [
     //address="1.2.2",
         fetch=true
         //pingInterval=300,
-        ,readInterval=110
+        ,readInterval=300
    ] {
     Type rollershutter : BM1 "Veranda 1" [ upDown="4/0/1", stopMove="4/1/1", position="4/2/1+<4/4/1"]
     Type rollershutter : BM2 "Veranda 2" [ upDown="4/0/2", stopMove="4/1/2", position="4/2/2", positionFeedback="4/4/2", angle="4/3/2", angleFeedback="4/5/2" ]
@@ -166,9 +168,9 @@ Bridge knx:ip:home [
   Thing device ac1 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/0+<13/0/1"]
@@ -181,9 +183,9 @@ Bridge knx:ip:home [
   Thing device ac2 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/2+<13/0/3"]
@@ -196,9 +198,9 @@ Bridge knx:ip:home [
   Thing device ac3 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/4+<13/0/5"]
@@ -211,9 +213,9 @@ Bridge knx:ip:home [
   Thing device ac4 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/6+<13/0/7"]
@@ -226,9 +228,9 @@ Bridge knx:ip:home [
   Thing device ac5 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/8+<13/0/9"]
@@ -241,9 +243,9 @@ Bridge knx:ip:home [
   Thing device ac6 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : ac       "AC"       [ ga="1.001:13/0/10+<13/0/11"]
@@ -256,13 +258,13 @@ Bridge knx:ip:home [
 Thing device underfloor1 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/1+<14/0/1"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/0"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/0"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/0+<14/4/1"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/1+<14/2/1"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/1+<14/1/1"]
@@ -270,13 +272,13 @@ Thing device underfloor1 [
 Thing device underfloor2 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/2+<14/0/3"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/0"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/0"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/2+<14/4/3"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/2+<14/2/2"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/2+<14/1/2"]
@@ -284,13 +286,13 @@ Thing device underfloor2 [
 Thing device underfloor3 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/3+<14/0/3"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/1"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/1"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/4+<14/4/5"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/3+<14/2/3"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/3+<14/1/3"]
@@ -298,13 +300,13 @@ Thing device underfloor3 [
 Thing device underfloor4 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/4+<14/0/4"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/2"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/2"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/6+<14/4/7"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/4+<14/2/4"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/4+<14/1/4"]
@@ -312,13 +314,13 @@ Thing device underfloor4 [
 Thing device underfloor5 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/5+<14/0/5"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/3"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/3"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/8+<14/4/9"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/5+<14/2/5"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/5+<14/1/5"]
@@ -326,9 +328,9 @@ Thing device underfloor5 [
 Thing device underfloor6 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/6+<14/0/6"]
@@ -340,13 +342,13 @@ Thing device underfloor6 [
 Thing device underfloor7 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/7+<14/0/7"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/5"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/5"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/12+<14/4/13"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/7+<14/2/7"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/7+<14/1/7"]
@@ -354,15 +356,46 @@ Thing device underfloor7 [
 Thing device underfloor8 [
         //MH AC 
         //address="1.1.36",
-        //fetch=true,
+        fetch=true,
         //pingInterval=300,
-        //readInterval=300
+        readInterval=300
     ] {
 
         Type switch        : powerONOFF       "Power ON/OFF"       [ ga="1.001:14/0/8+<14/0/8"]
-        Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/6"] 
+        //Type number        : tem   "Current Temp"  [ ga="9.001:<13/3/6"] 
         Type number        : set    "SETPOINT"   [ ga="9.001:14/4/14+<14/4/15"]
         Type switch        : heatControl       "Heat Control Valve"       [ ga="1.001:14/2/8+<14/2/8"]
         //Type switch        : valvePosition       "Status of Valve Position"       [ ga="1.001:14/1/8+<14/1/8"]
 }
+
+  Thing device poolControl "KNX Pool Room" [ 
+        //address="1.2.2",
+        fetch=true
+        //pingInterval=300,
+        ,readInterval=80
+    ] {
+    Type dimmer : red "Pool Red"     [ switch="3/0/28+<3/3/28", increaseDecrease="3/1/28", position="3/2/28+<3/4/28" ]
+    Type dimmer : green "Pool Green" [ switch="3/0/29+<3/3/29", increaseDecrease="3/1/29", position="3/2/29+<3/4/29" ]
+    Type dimmer : blue "Pool Blue"   [ switch="3/0/30+<3/3/30", increaseDecrease="3/1/30", position="3/2/30+<3/4/30" ]
+    Type switch        : BL26       "Stairs Led"       [ ga="3/0/26+<3/3/26" ]
+    Type switch        : BL27       "Spikes"       [ ga="3/0/27+<3/3/27" ]
+    }
+
+  Thing device masterCommand "KNX Master Command" [ 
+
+    ] {
+    Type switch        : offLightAll      [ ga="0/1/0" ]
+    Type switch        : offLightGF      [ ga="0/1/1" ]
+    Type switch        : offLightBS      [ ga="0/1/3" ]
+    Type switch        : offLightOut      [ ga="0/1/4" ]
+    Type rollershutter : downAll [ upDown="0/2/0"]
+    Type rollershutter : downGF [ upDown="0/2/1"]
+    Type rollershutter : downBS [ upDown="0/2/3"]
+    Type switch        : offHeatAll      [ ga="0/3/1" ]
+    Type switch        : offHeatGF      [ ga="0/3/2" ]
+    Type switch        : offHeatBS      [ ga="0/3/0" ]
+    Type switch        : offACAll      [ ga="0/4/0" ]
+    Type switch        : offACGF      [ ga="0/4/1" ]
+    Type switch        : offACBS      [ ga="0/4/3" ]
+    }
 }

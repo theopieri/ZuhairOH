@@ -1,52 +1,275 @@
 sitemap home label="Home"
 {
   Frame label="Home Overview" {
-    Group item=Ground
-    Group item=Basement
-    Group item=House{
-    Frame label="Master Command" {
-      Switch item=G_Bed1_L mappings=[ON="All ON", OFF="All OFF"]
-      Switch item=G_Bed1_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
-    }
-    Frame label="Bedroom 1 Lights" {
-      Slider item=Light_GL1
-      Switch item=Light_GL9
-      Switch item=Light_GL10
-      Switch item=Light_GL17
-      Switch item=Light_GL39
-      Switch item=Light_GL35
-      Switch item=Light_GL29
-      Switch item=Light_GL31
-      Switch item=Light_GL32
-      Switch item=Light_GL33
-      
-    }
-    Frame label="Bedroom 1 Blinds" {
-      Default item=Blind_GM1
-      Default item=Blind_GM2
-      Default item=Blind_GM3
-      Default item=Blind_GM4
-      Default item=Blind_GM5
-      Default item=Blind_GM6
-    }
-
-    Frame label="Bedroom 1 Heatinhg" {
-      Switch item=UF1On 
-      Text item=UF1Temp
-      Setpoint item=UF1Set
-      Switch item=UF1hc
-      Switch item=UF2On 
-      Text item=UF2Temp
-      Setpoint item=UF2Set
-      Switch item=UF2hc
-    }
-    Frame label="Bedroom 1 AC" {
-      Switch item=AC1On
-      Switch item=AC1Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"] 
-      Text item=AC1Temp
-      Setpoint item=AC1Set
-      Switch item=AC1Fan mappings=[0="Auto",20="Low",60="Medium",100="High"]
-    }
+    //Group item=Ground
+    //Group item=Basement
+    Switch item=hotwater mappings=[ON="Run 1Hour"]
+    Switch item=recwater mappings=[ON="Run 2 mins"]
+    Default item=seasonalMode
+    Default item=debugMode
   }
+  Frame label="Areas" {
+    Group item=Outdoor{
+      Frame label="Master Command" {
+        Switch item=Outdoor mappings=[ON="All ON", OFF="All OFF"]
+        //Switch item=G_Corridor_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Switch item=Light_GL22
+        Switch item=Light_GL21
+        Switch item=Light_GL34
+        Switch item=Light_BL13
+        Slider item=Light_BL4
+        Switch item=Light_BL11
+        Switch item=Light_BL17
+        Switch item=Light_BL15
+        Switch item=Light_BL26
+        Switch item=Light_BL27
+        Slider item=Light_BL28
+        Slider item=Light_BL29
+        Slider item=Light_BL30
+      }
+      /*Frame label="Blinds" {
+        Default item=Blind_GM16
+        Default item=Blind_GM17
+        Default item=Blind_GM18
+      }*/
+    }
+    Group item=B_Dining{
+      Frame label="Master Command" {
+        Switch item=B_Dining_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=B_Dining_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_BL1
+        Slider item=Light_BL5
+        Switch item=Light_BL6
+        Switch item=Light_BL18
+      }
+      Frame label="Blinds" {
+        Default item=Blind_BM10
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC6Temp
+        Switch item=UF8On 
+        Setpoint item=UF8Set visibility=[UF8On==ON]
+        Switch item=UF8hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC6Temp
+        Switch item=AC6On
+        Setpoint item=AC6Set visibility=[AC6On==ON]
+        Switch item=AC6Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC6On==ON]
+        Switch item=AC6Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC6On==ON]
+      }
+    }
+    Group item=B_Living{
+      Frame label="Master Command" {
+        Switch item=B_Living_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=B_Living_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_BL3
+        Switch item=Light_BL10
+      }
+      Frame label="Blinds" {
+        Default item=Blind_BM9
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC5Temp
+        Switch item=UF7On 
+        Setpoint item=UF7Set visibility=[UF7On==ON]
+        Switch item=UF7hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC5Temp
+        Switch item=AC5On
+        Setpoint item=AC5Set visibility=[AC5On==ON]
+        Switch item=AC5Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC5On==ON]
+        Switch item=AC5Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC5On==ON]
+      }
+    }
+    Group item=B_Bath{
+      Frame label="Master Command" {
+        Switch item=B_Bath_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=B_Bath_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Switch item=Light_BL20
+        Switch item=Light_BL19
+      }
+      Frame label="Blinds" {
+        Default item=Blind_BM3
+      }
+    }
+    Group item=G_Bed1{
+      Frame label="Master Command" {
+        Switch item=G_Bed1_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=G_Bed1_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_GL1
+        Switch item=Light_GL9
+        Switch item=Light_GL10
+        Switch item=Light_GL17
+        Switch item=Light_GL39
+        Switch item=Light_GL35
+        Switch item=Light_GL29
+        Switch item=Light_GL31
+        Switch item=Light_GL32 visibility=[debugMode==ON]
+        Switch item=Light_GL33 visibility=[debugMode==ON]
+      }
+      Frame label="Blinds" {
+        Default item=Blind_GM1
+        Default item=Blind_GM2
+        //Default item=Blind_GM3
+        //Default item=Blind_GM4
+        //Default item=Blind_GM5
+        //Default item=Blind_GM6
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC1Temp
+        Switch item=UF1On 
+        Setpoint item=UF1Set visibility=[UF1On==ON]
+        Switch item=UF1hc visibility=[debugMode==ON]
+        Switch item=UF2On 
+        Setpoint item=UF2Set visibility=[UF2On==ON]
+        Switch item=UF2hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC1Temp
+        Switch item=AC1On
+        Setpoint item=AC1Set visibility=[AC1On==ON]
+        Switch item=AC1Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC1On==ON]
+        Switch item=AC1Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC1On==ON]
+      }
+    }
+    Group item=G_Bed2{
+      Frame label="Master Command" {
+        Switch item=G_Bed2_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=G_Bed2_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_GL2
+        Switch item=Light_GL18
+        Switch item=Light_GL11
+        Switch item=Light_GL12
+        Switch item=Light_GL36
+      }
+      Frame label="Blinds" {
+        //Default item=Blind_GM7
+        Default item=Blind_GM8
+        //Default item=Blind_GM9
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC2Temp
+        Switch item=UF3On 
+        Setpoint item=UF3Set visibility=[UF3On==ON]
+        Switch item=UF3hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC2Temp
+        Switch item=AC2On
+        Setpoint item=AC2Set visibility=[AC2On==ON]
+        Switch item=AC2Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC2On==ON]
+        Switch item=AC2Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC2On==ON]
+      }
+    }
+    Group item=G_Bed3{
+      Frame label="Master Command" {
+        Switch item=G_Bed3_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=G_Bed3_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_GL3
+        Switch item=Light_GL19
+        Switch item=Light_GL13
+        Switch item=Light_GL14
+        Switch item=Light_GL37
+      }
+      Frame label="Blinds" {
+        Default item=Blind_GM10
+        //Default item=Blind_GM11
+        //Default item=Blind_GM12
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC3Temp
+        Switch item=UF4On 
+        Setpoint item=UF4Set visibility=[UF4On==ON]
+        Switch item=UF4hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC3Temp
+        Switch item=AC3On
+        Setpoint item=AC3Set visibility=[AC3On==ON]
+        Switch item=AC3Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC3On==ON]
+        Switch item=AC3Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC3On==ON]
+      }
+    }
+    Group item=G_Bed4{
+      Frame label="Master Command" {
+        Switch item=G_Bed4_L mappings=[ON="All ON", OFF="All OFF"]
+        Switch item=G_Bed4_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_GL6
+        Switch item=Light_GL16
+        Switch item=Light_GL15
+        Switch item=Light_GL38
+      }
+      Frame label="Blinds" {
+        //Default item=Blind_GM13
+        Default item=Blind_GM14
+        //Default item=Blind_GM15
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=AC4Temp
+        Switch item=UF5On 
+        Setpoint item=UF5Set visibility=[UF5On==ON]
+        Switch item=UF5hc visibility=[debugMode==ON]
+      }
+      Frame label="AC"  visibility=[seasonalMode==OFF]{
+        Text item=AC4Temp
+        Switch item=AC4On
+        Setpoint item=AC4Set visibility=[AC4On==ON]
+        Switch item=AC4Mode mappings=[Auto="Auto", Heat="Heat", Cool="Cool", "9"="Fan Only"]  visibility=[AC4On==ON]
+        Switch item=AC4Fan mappings=[0="Auto",20="Low",60="Medium",100="High"] visibility=[AC4On==ON]
+      }
+    }
+    Group item=G_Corridor{
+      Frame label="Master Command" {
+        Switch item=G_Corridor_L mappings=[ON="All ON", OFF="All OFF"]
+        //Switch item=G_Corridor_B mappings=[UP="All UP", DOWN="All DOWN", STOP="STOP"]
+      }
+      Frame label="Lights" {
+        Slider item=Light_GL5
+        Slider item=Light_GL7
+        Switch item=Light_GL20
+        Switch item=Light_BL25
+        Switch item=Light_BL9
+      }
+      /*Frame label="Blinds" {
+        Default item=Blind_GM16
+        Default item=Blind_GM17
+        Default item=Blind_GM18
+      }*/
+    }
+    Group item=G_MainBath{
+      Frame label="Master Command" {
+        Switch item=G_MainBath mappings=[ON="All ON", OFF="All OFF"]
+      }
+      Frame label="Lights" {
+        Switch item=Light_GL25
+        Switch item=Light_GL26
+        Switch item=Light_GL27 visibility=[debugMode==ON]
+        Switch item=Light_GL28 visibility=[debugMode==ON]
+      }
+      Frame label="Heatinhg" visibility=[seasonalMode==ON] {
+        Text item=UF6Temp
+        Switch item=UF6On 
+        Setpoint item=UF6Set visibility=[UF6On==ON]
+        Switch item=UF6hc visibility=[debugMode==ON]
+      }
+    }
   }
 }

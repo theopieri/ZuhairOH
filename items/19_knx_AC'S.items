@@ -1,4 +1,4 @@
-Switch AC1On     "ON/OFF"     (G_Bed1_AC)   ["Control"]         { channel="knx:device:home:ac1:ac",widgetOrder="1"}
+Switch AC1On     "ON/OFF"     (G_Bed1_AC)   ["Airconditioning","Switch"]         { channel="knx:device:home:ac1:ac",widgetOrder="1"}
 String AC1Mode   "Mode [%s]" <snow>   (G_Bed1_AC)     ["Control"]    { channel="knx:device:home:ac1:modeac"
 ,
 widgetOrder="2",
@@ -9,7 +9,7 @@ action="options",
 actionItem="AC1Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC1Temp   "Temperature [%.1f °C]"    <temperature> (G_Bed1_AC)  ["Temperature"]      { channel="knx:device:home:ac1:stemac",widgetOrder="3"}
+Number AC1Temp   "Temperature [%.1f °C]"    <temperature> (G_Bed1_TEMP)  ["Measurement","Temperature"]      { channel="knx:device:home:ac1:stemac",widgetOrder="3"}
 Number AC1Set    "Set Point Temperature [%.1f °C]" <temperature> (G_Bed1_AC) ["Setpoint","Temperature"]  { channel="knx:device:home:ac1:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC1On.state=='ON'" ]
@@ -26,8 +26,8 @@ actionItem="AC1Fan",
 actionOptions="0=Auto,20=Low,60=Medium,100=High"]
 }
 
-Switch AC2On     "Bed 2 ON/OFF"     (G_Bed2_AC)      ["Control"]            { channel="knx:device:home:ac2:ac",widgetOrder="1"}
-String AC2Mode   "Bed 2 Mode" <snow>   (G_Bed2_AC)      ["Control"]                         { channel="knx:device:home:ac2:modeac"
+Switch AC2On     "ON/OFF"     (G_Bed2_AC)      ["Airconditioning","Switch"]             { channel="knx:device:home:ac2:ac",widgetOrder="1"}
+String AC2Mode   "Mode" <snow>   (G_Bed2_AC)      ["Control"]                         { channel="knx:device:home:ac2:modeac"
 ,
 widgetOrder="2",
 listWidget="oh-list-item" [
@@ -37,13 +37,13 @@ action="options",
 actionItem="AC2Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC2Temp   "Bed 2 Temperature [%.1f °C]"    <temperature> (G_Bed2_AC)   ["Temperature"]    { channel="knx:device:home:ac2:stemac",widgetOrder="3"}
-Number AC2Set    "Bed 2 Set Point Temperature [%.1f °C]" <temperature> (G_Bed2_AC) ["Setpoint","Temperature"]{ channel="knx:device:home:ac2:setac"
+Number AC2Temp   "Temperature [%.1f °C]"    <temperature> (G_Bed2_TEMP)   ["Measurement","Temperature"]    { channel="knx:device:home:ac2:stemac",widgetOrder="3"}
+Number AC2Set    "Set Point Temperature [%.1f °C]" <temperature> (G_Bed2_AC) ["Setpoint","Temperature"]{ channel="knx:device:home:ac2:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC2On.state=='ON'" ]
 }
 //[SCALE(roundUP.scale):%s]
-Number AC2Fan    "Bed 2 Fan " <fan> (G_Bed2_AC) ["Control"] { channel="knx:device:home:ac2:fanac"
+Number AC2Fan    "Fan " <fan> (G_Bed2_AC) ["Control"] { channel="knx:device:home:ac2:fanac"
 ,
 widgetOrder="5",
 listWidget="oh-list-item" [
@@ -54,8 +54,8 @@ actionItem="AC2Fan",
 actionOptions="0=Auto,20=Low,60=Medium,100=High"]
 }
 
-Switch AC3On     "Bed 3 ON/OFF"     (G_Bed3_AC)     ["Control"]             { channel="knx:device:home:ac3:ac",widgetOrder="1"}
-String AC3Mode   "Bed 3 Mode" <snow>   (G_Bed3_AC)  ["Control"]                             { channel="knx:device:home:ac3:modeac"
+Switch AC3On     "ON/OFF"     (G_Bed3_AC)    ["Airconditioning","Switch"]              { channel="knx:device:home:ac3:ac",widgetOrder="1"}
+String AC3Mode   "Mode" <snow>   (G_Bed3_AC)  ["Control"]                             { channel="knx:device:home:ac3:modeac"
 ,
 widgetOrder="2",
 listWidget="oh-list-item" [
@@ -65,13 +65,13 @@ action="options",
 actionItem="AC3Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC3Temp   "Bed 3 Temperature [%.1f °C]"    <temperature> (G_Bed3_AC)   ["Temperature"]    { channel="knx:device:home:ac3:stemac",widgetOrder="3"}
-Number AC3Set    "Bed 3 Set Point Temperature [%.1f °C]" <temperature> (G_Bed3_AC) ["Setpoint","Temperature"]{ channel="knx:device:home:ac3:setac"
+Number AC3Temp   "Temperature [%.1f °C]"    <temperature> (G_Bed3_TEMP)   ["Measurement","Temperature"]    { channel="knx:device:home:ac3:stemac",widgetOrder="3"}
+Number AC3Set    "Set Point Temperature [%.1f °C]" <temperature> (G_Bed3_AC) ["Setpoint","Temperature"]{ channel="knx:device:home:ac3:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC3On.state=='ON'" ]
 }
 //[SCALE(roundUP.scale):%s]
-Number AC3Fan    "Bed 3 Fan " <fan> (G_Bed3_AC) ["Control"] { channel="knx:device:home:ac3:fanac"
+Number AC3Fan    "Fan " <fan> (G_Bed3_AC) ["Control"] { channel="knx:device:home:ac3:fanac"
 ,
 widgetOrder="5",
 listWidget="oh-list-item" [
@@ -82,8 +82,8 @@ actionItem="AC3Fan",
 actionOptions="0=Auto,20=Low,60=Medium,100=High"]
 }
 
-Switch AC4On     "Bed 4 ON/OFF"     (G_Bed4_AC)      ["Control"]            { channel="knx:device:home:ac4:ac",widgetOrder="1"}
-String AC4Mode   "Bed 4 Mode" <snow>   (G_Bed4_AC)    ["Control"]                           { channel="knx:device:home:ac4:modeac"
+Switch AC4On     "ON/OFF"     (G_Bed4_AC)      ["Airconditioning","Switch"]             { channel="knx:device:home:ac4:ac",widgetOrder="1"}
+String AC4Mode   "Mode" <snow>   (G_Bed4_AC)    ["Control"]                           { channel="knx:device:home:ac4:modeac"
 ,
 widgetOrder="2",
 listWidget="oh-list-item" [
@@ -93,13 +93,13 @@ action="options",
 actionItem="AC4Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC4Temp   "Bed 4 Temperature [%.1f °C]"    <temperature> (G_Bed4_AC)  ["Temperature"]     { channel="knx:device:home:ac4:stemac",widgetOrder="3"}
-Number AC4Set    "Bed 4 Set Point Temperature [%.1f °C]" <temperature> (G_Bed4_AC) ["Setpoint","Temperature"] { channel="knx:device:home:ac4:setac"
+Number AC4Temp   "Temperature [%.1f °C]"    <temperature> (G_Bed4_TEMP)  ["Measurement","Temperature"]     { channel="knx:device:home:ac4:stemac",widgetOrder="3"}
+Number AC4Set    "Set Point Temperature [%.1f °C]" <temperature> (G_Bed4_AC) ["Setpoint","Temperature"] { channel="knx:device:home:ac4:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC4On.state=='ON'" ]
 }
 //[SCALE(roundUP.scale):%s]
-Number AC4Fan    "Bed 4 Fan " <fan> (G_Bed4_AC) ["Control"] { channel="knx:device:home:ac4:fanac"
+Number AC4Fan    "Fan " <fan> (G_Bed4_AC) ["Control"] { channel="knx:device:home:ac4:fanac"
 ,
 widgetOrder="5",
 listWidget="oh-list-item" [
@@ -110,7 +110,7 @@ actionItem="AC4Fan",
 actionOptions="0=Auto,20=Low,60=Medium,100=High"]
 }
 
-Switch AC5On     "Living ON/OFF"     (B_Living_AC)    ["Control"]              { channel="knx:device:home:ac5:ac",widgetOrder="1"}
+Switch AC5On     "Living ON/OFF"     (B_Living_AC)    ["Airconditioning","Switch"]               { channel="knx:device:home:ac5:ac",widgetOrder="1"}
 String AC5Mode   "Living Mode" <snow>   (B_Living_AC)   ["Control"]                            { channel="knx:device:home:ac5:modeac"
 ,
 widgetOrder="2",
@@ -121,7 +121,7 @@ action="options",
 actionItem="AC5Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC5Temp   "Living Temperature [%.1f °C]"    <temperature> (B_Living_AC)  ["Temperature"]     { channel="knx:device:home:ac5:stemac",widgetOrder="3"}
+Number AC5Temp   "Living Temperature [%.1f °C]"    <temperature> (B_Living_TEMP)  ["Measurement","Temperature"]     { channel="knx:device:home:ac5:stemac",widgetOrder="3"}
 Number AC5Set    "Living Set Point Temperature [%.1f °C]" <temperature> (B_Living_AC) ["Setpoint","Temperature"] { channel="knx:device:home:ac5:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC5On.state=='ON'" ]
@@ -138,7 +138,7 @@ actionItem="AC5Fan",
 actionOptions="0=Auto,20=Low,60=Medium,100=High"]
 }
 
-Switch AC6On     "Dining ON/OFF"     (B_Dining_AC)     ["Control"]             { channel="knx:device:home:ac6:ac",widgetOrder="1"}
+Switch AC6On     "Dining ON/OFF"     (B_Dining_AC)    ["Airconditioning","Switch"]             { channel="knx:device:home:ac6:ac",widgetOrder="1"}
 String AC6Mode   "Dining Mode" <snow>   (B_Dining_AC)  ["Control"]                             { channel="knx:device:home:ac6:modeac"
 ,
 widgetOrder="2",
@@ -149,7 +149,7 @@ action="options",
 actionItem="AC6Mode",
 actionOptions="Auto=Auto, Heat=Heat, Cool=Cool, 9=Fan Only"]
 }
-Number AC6Temp   "Dining Temperature [%.1f °C]"    <temperature> (B_Dining_AC)    ["Temperature"]   { channel="knx:device:home:ac6:stemac",widgetOrder="3"}
+Number AC6Temp   "Dining Temperature [%.1f °C]"    <temperature> (B_Dining_TEMP)    ["Measurement","Temperature"]   { channel="knx:device:home:ac6:stemac",widgetOrder="3"}
 Number AC6Set    "Dining Set Point Temperature [%.1f °C]" <temperature> (B_Dining_AC) ["Setpoint","Temperature"] { channel="knx:device:home:ac6:setac"
 ,widgetOrder="4",
 listWidget="oh-stepper-item" [icon="temperature", min="17", max="28",step="1",visible="=items.AC6On.state=='ON'" ]
