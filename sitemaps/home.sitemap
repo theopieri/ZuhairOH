@@ -1,12 +1,23 @@
 sitemap home label="Home"
 {
   Frame label="Home Overview" {
-    //Group item=Ground
-    //Group item=Basement
+    Switch item=masterOFFAllLights mappings=[ON="All ON", OFF="All OFF"]
+    //Switch item=masterOFFGFLights mappings=[ON="All ON", OFF="All OFF"]
+    //Switch item=masterOFFBSLights mappings=[ON="All ON", OFF="All OFF"]
+    Switch item=masterOFFOutLights mappings=[ON="All ON", OFF="All OFF"]
+    Switch item=masterOFFAllBlinds mappings=[UP="UP", DOWN="DOWN"]  
+    //Switch item=masterOFFGFBlinds mappings=[UP="UP", DOWN="DOWN"]  
+    //Switch item=masterOFFBSBlinds mappings=[UP="UP", DOWN="DOWN"]  
+    Switch item=masterOFFAllAC mappings=[OFF="All OFF"]   
+    //Switch item=masterOFFGFAC mappings=[OFF="All OFF"]   
+    //Switch item=masterOFFBSAC mappings=[OFF="All OFF"]   
+    Switch item=masterOFFAllUF mappings=[ON="All ON",OFF="All OFF"]   
+    //Switch item=masterOFFGFUF mappings=[OFF="All OFF"]   
+    //Switch item=masterOFFBSUF mappings=[OFF="All OFF"]
     Switch item=hotwater mappings=[ON="Run 1Hour"]
     Switch item=recwater mappings=[ON="Run 2 mins"]
-    Default item=seasonalMode
-    Default item=debugMode
+    Group item=gService
+
   }
   Frame label="Areas" {
     Group item=Outdoor{

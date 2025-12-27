@@ -1,0 +1,24 @@
+
+
+Switch Heating_GF_VoltageFailure "Heating Ground Floor Voltage Failure [MAP(knx_error.map):%s]" (gService) { channel="knx:device:home:errors:heatGF_VoltageFail" }
+Switch Heating_BS_VoltageFailure "Heating Basement Voltage Failure [MAP(knx_error.map):%s]" (gService)      { channel="knx:device:home:errors:heatBS_VoltageFail" }
+
+//String AC1_Error_Text "AC1 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac1_errorText" }
+Switch AC1_Error_1bit "AC1 Error [MAP(knx_error.map):%s]" (gService)           { channel="knx:device:home:errors:ac1_errorBit" }
+
+//String AC2_Error_Text "AC2 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac2_errorText" }
+Switch AC2_Error_1bit "AC2 Error [MAP(knx_error.map):%s]" (gService)                    { channel="knx:device:home:errors:ac2_errorBit" }
+
+//String AC3_Error_Text "AC3 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac3_errorText" }
+Switch AC3_Error_1bit "AC3 Error [MAP(knx_error.map):%s]" (gService)           { channel="knx:device:home:errors:ac3_errorBit" }
+
+//String AC4_Error_Text "AC4 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac4_errorText" }
+Switch AC4_Error_1bit "AC4 Error [MAP(knx_error.map):%s]" (gService)           { channel="knx:device:home:errors:ac4_errorBit" }
+
+//String AC5_Error_Text "AC5 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac5_errorText" }
+Switch AC5_Error_1bit "AC5 Error [MAP(knx_error.map):%s]" (gService)           { channel="knx:device:home:errors:ac5_errorBit" }
+
+//String AC6_Error_Text "AC6 Error Text [%s]" (gService) { channel="knx:device:home:errors:ac6_errorText" }
+Switch AC6_Error_1bit "AC6 Error [MAP(knx_error.map):%s]" (gService)           { channel="knx:device:home:errors:ac6_errorBit" }
+
+Number LedDimmerError1byte "Led Dimmer Error [%.0f]" (gService) { channel="knx:device:home:errors:ledDimmerError1byte" }

@@ -1,0 +1,58 @@
+
+Group SensorsAlarm (gService)
+Group SensorsAlarmDebug (gService)
+Group Partition (gService)
+
+Switch p1Arm   "Main House Armed/Disarmed"                    (Partition) {channel="risco:partition:lightsys:p1:arm"}
+Switch p1Ready "Main House Ready to arm"                     (Partition) {channel="risco:partition:lightsys:p1:ready-to-arm"}
+Switch p1Alarm "Main House Alarm"                      (Partition) {channel="risco:partition:lightsys:p1:alarm"}
+Switch p1Fire   "Main House Fire"                    (Partition) {channel="risco:partition:lightsys:p1:fire"}
+
+/*Zones*/
+Contact z1Open  "Hall Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z1:open"}
+Switch z1ByPass  "Hall Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z1:bypass"}
+
+Contact z2Open  "Bed 4 Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z2:open"}
+Switch z2ByPass  "Bed 4 Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z2:bypass"}
+
+Contact z3Open  "Bed 3 Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z3:open"}
+Switch z3ByPass  "Bed 3 Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z3:bypass"}
+
+Contact z4Open  "Bed 2 Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z4:open"}
+Switch z4ByPass  "Bed 2 Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z4:bypass"}
+
+Contact z5Open  "Bed 1 Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z5:open"}
+Switch z5ByPass  "Bed 1 Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z5:bypass"}
+
+Contact z6Open  "Kitchen Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z6:open"}
+Switch z6ByPass  "Kitchen Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z6:bypass"}
+
+Contact z7Open  "Dining Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z7:open"}
+Switch z7ByPass  "Dining Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z7:bypass"}
+
+Contact z8Open  "Rack Smoke [%s]"  <smoke>             (SensorsAlarm) {channel="risco:zone:lightsys:z8:open"}
+Switch z8ByPass  "Rack Smoke Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z8:bypass"}
+
+Contact z9Open  "PIR Front Door [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z9:open"}
+Switch z9ByPass  "PIR Front Door Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z9:bypass"}
+Contact z9Tamper "PIR Front Door Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z9:tamper"}
+
+Contact z10Open  "PIR Bed 4 [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z10:open"}
+Switch z10ByPass  "PIR Bed 4 Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z10:bypass"}
+Contact z10Tamper "PIR Bed 4 Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z10:tamper"}
+
+Contact z11Open  "PIR Bed 3 [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z11:open"}
+Switch z11ByPass  "PIR Bed 3 Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z11:bypass"}
+Contact z11Tamper "PIR Bed 3 Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z11:tamper"}
+
+Contact z12Open  "PIR Bed 2 [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z12:open"}
+Switch z12ByPass  "PIR Bed 2 Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z12:bypass"}
+Contact z12Tamper "PIR Bed 2 Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z12:tamper"}
+
+Contact z13Open  "PIR Bed 1 [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z13:open"}
+Switch z13ByPass  "PIR Bed 1 Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z13:bypass"}
+Contact z13Tamper "PIR Bed 1 Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z13:tamper"}
+
+Contact z14Open  "PIR Basement [%s]"  <motion>             (SensorsAlarm) {channel="risco:zone:lightsys:z14:open"}
+Switch z14ByPass  "PIR Basement Bypass  [%s]"     <contact> (SensorsAlarmDebug) {channel="risco:zone:lightsys:z14:bypass"}
+Contact z14Tamper "PIR Basement Tamper "         <contact>  (SensorsAlarmDebug) {channel="risco:zone:lightsys:z14:tamper"}

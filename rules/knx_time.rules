@@ -1,0 +1,9 @@
+import org.openhab.core.library.types.DateTimeType
+import java.time.ZonedDateTime
+
+rule "Send Date/Time to KNX every hour"
+when
+  Time cron "0 0 * * * ?"
+then
+  KNX_TimeMaster.sendCommand(new DateTimeType(ZonedDateTime.now()))
+end

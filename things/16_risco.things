@@ -1,0 +1,34 @@
+Bridge risco:bridge:lightsys "Risco Alarm Panel" [ 
+    hostname="10.111.1.252",
+    password= "5678",
+    id=1,
+    encoding= "UTF-8",
+    port=1000,
+    connectionDelay=10000] {
+    /*Panel*/
+    //Thing system panel "Main Panel"
+    /*Partition*/
+    Thing partition p1 "Partition 1 Main House" [partitionNumber=1]
+    //Thing partition p2 "Partition 2 GF G.Bed" [partitionNumber=2]
+    //Thing partition p3 "Partition 3 Master Bed and Gym" [partitionNumber=3]
+    /*Keypads */
+    Thing keypad k1 "Keypad Main Entrance"  [keypadNumber=1]  
+    Thing keypad k2 "Keypad Basement"  [keypadNumber=2]  
+    /*Zones*/
+    Thing zone z1  "Zone 1"  [zoneNumber=1]
+    Thing zone z2  "Zone 2"  [zoneNumber=2]
+    Thing zone z3  "Zone 3"  [zoneNumber=3]
+    Thing zone z4  "Zone 4"  [zoneNumber=4]
+    Thing zone z5  "Zone 5"  [zoneNumber=5]
+    Thing zone z6  "Zone 6"  [zoneNumber=6]
+    Thing zone z7  "Zone 7"  [zoneNumber=7]
+    Thing zone z8  "Zone 8"  [zoneNumber=8]
+    Thing zone z9  "Zone 9"  [zoneNumber=9]
+    Thing zone z10  "Zone 10"  [zoneNumber=10]
+    Thing zone z11  "Zone 11"  [zoneNumber=11]
+    Thing zone z12  "Zone 12"  [zoneNumber=12]
+    Thing zone z13  "Zone 13"  [zoneNumber=13]
+    Thing zone z14  "Zone 14"  [zoneNumber=14]
+    //Thing zone z15  "Zone 15"  [zoneNumber=15]
+    //Thing zone z16  "Zone 16"  [zoneNumber=16]
+}

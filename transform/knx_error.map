@@ -1,0 +1,4 @@
+ON=ALARM
+OFF=NO ALARM
+NULL=unknown
+-=unknown

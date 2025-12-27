@@ -1,9 +1,28 @@
 Group House "House" [ "Location" ]
 Group Ground "Ground Floor" (House) [ "GroundFloor" ]
 Group Basement "Basement" (House) [ "Basement" ]
+Group gService "Services" <niveau>
 
-Switch seasonalMode "summer/winter" <season> 
-Switch debugMode "Debug Mode" <settings> //Hidden statrus 
+Switch seasonalMode "summer/winter"  <season> (gService)
+Switch debugMode "Debug Mode"  <settings> (gService) //Hidden statrus 
+Switch masterOFFAllLights "Master OFF All Lights" <light> { channel="knx:device:home:masterCommand:offLightAll" }
+Switch masterOFFGFLights "Master OFF GF Lights" <light> { channel="knx:device:home:masterCommand:offLightGF" }
+Switch masterOFFBSLights "Master OFF BS Lights" <light> { channel="knx:device:home:masterCommand:offLightBS" }
+Switch masterOFFOutLights "Master OFF Out Lights" <light> { channel="knx:device:home:masterCommand:offLightOut" }
+Rollershutter masterOFFAllBlinds "Master OFF All Blinds" <rollershutter>  { channel="knx:device:home:masterCommand:downAll" }
+Rollershutter masterOFFGFBlinds "Master OFF GF Blinds" <rollershutter>  { channel="knx:device:home:masterCommand:downGF" }
+Rollershutter masterOFFBSBlinds "Master OFF BS Blinds" <rollershutter>  { channel="knx:device:home:masterCommand:downBS" }
+Switch masterOFFAllAC "Master OFF All AC" <snow>  { channel="knx:device:home:masterCommand:offACAll" }
+Switch masterOFFGFAC "Master OFF GF AC" <snow>  { channel="knx:device:home:masterCommand:offACGF" }
+Switch masterOFFBSAC "Master OFF BS AC" <snow>  { channel="knx:device:home:masterCommand:offACBS" }
+Switch masterOFFAllUF "Master OFF All Under Floor" <radiator>  { channel="knx:device:home:masterCommand:offHeatAll" }
+Switch masterOFFGFUF "Master OFF GF Under Floor" <radiator>  { channel="knx:device:home:masterCommand:offHeatGF" }
+Switch masterOFFBSUF "Master OFF BS Under Floor" <radiator>  { channel="knx:device:home:masterCommand:offHeatBS" }
+
+DateTime KNX_TimeMaster "KNX TimeMaster" { channel="knx:device:home:knx_virtual:knxTime", channel="knx:device:home:knx_virtual:knxDate" }
+// helper item (no channel needed)
+DateTime SystemNow "System Now [%1$tF %1$tT]"
+
 // Ground sublocations
 Group G_Bed1 "Bedroom 1" <bedroom_blue> (Ground) [ "Room" ]
     Group:Switch:OR(ON, OFF) G_Bed1_L "Lights" <light> (G_Bed1) ['SpotLight'] {widgetOrder="1"}
